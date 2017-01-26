@@ -14,7 +14,7 @@ $(document).ready(function(){
 		// namnet meddelande
 		console.log( "success" );
 		console.log( meddelande );
-		$("#chat_log").text( meddelande );
+		$("#chat_log").append( meddelande + "<br>" );
 	})
 	.fail(function() {
 		console.log( "error" );
@@ -30,6 +30,7 @@ $(document).ready(function(){
 		jQuery.ajax("bot.php", {data: {meme: user_meme}})
 		.done(function(meddelande) {
 			console.log(meddelande);
+			$("#chat_log").append( meddelande + "<br>" );
 		});
 
 		event.preventDefault();
