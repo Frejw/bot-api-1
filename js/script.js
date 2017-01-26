@@ -24,7 +24,7 @@ $(document).ready(function(){
 	});
 
 	jQuery("#meme_form").submit(function(event) {
-		console.log( event );
+		console.log( event.target[0].value );
 		event.preventDefault();
 	});
 });
