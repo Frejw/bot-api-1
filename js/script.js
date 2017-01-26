@@ -24,7 +24,14 @@ $(document).ready(function(){
 	});
 
 	jQuery("#meme_form").submit(function(event) {
-		console.log( event.target[0].value );
+		
+		var user_meme = event.target[0].value;
+
+		jQuery.ajax("bot.php", {data: {meme: user_meme}})
+		.done(function(meddelande) {
+			console.log(meddelande);
+		});
+
 		event.preventDefault();
 	});
 });
