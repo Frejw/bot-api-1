@@ -14,12 +14,17 @@ $(document).ready(function(){
 		// namnet meddelande
 		console.log( "success" );
 		console.log( meddelande );
-		$("body").text( meddelande );
+		$("#chat_log").text( meddelande );
 	})
 	.fail(function() {
 		console.log( "error" );
 	})
 	.always(function() {
 		console.log( "complete" );
+	});
+
+	jQuery("#meme_form").submit(function(event) {
+		console.log( event );
+		event.preventDefault();
 	});
 });
